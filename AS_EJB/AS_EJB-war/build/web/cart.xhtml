@@ -18,6 +18,7 @@
           <ui:insert name="header">
             <ui:include src="./template/header.xhtml" />
           </ui:insert><!-- header -->
+
         <div id="shopping-cart">
             <h:form>
                 <h:commandLink  class="btn btn-danger" value="Empty Cart" action="#{cartProductMB.emptyCart()}"/>
@@ -73,12 +74,12 @@
             </c:if>
             <div class="no-records">
                 <p class="card-text">
-                    <h:link outcome="index" value="CONTINUOUS SHOPPING" class="btn btn-primary"/>
-                    <h:link outcome="checkout" value="CHECK OUT" class="btn btn-success"/>
+                    <h:link outcome="index" value="Continute Shopping" class="btn btn-primary"/>
+                    <h:commandButton value="Check Out"  class="btn btn-success"/>
                 </p>
             </div>
         </div>
-          
+         
         <ui:insert name="flooter">
             <ui:include src="./template/flooter.xhtml" />
         </ui:insert>

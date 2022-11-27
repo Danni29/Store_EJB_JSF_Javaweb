@@ -4,8 +4,11 @@ package com.managerbeans;
 
 
 import com.cart.CartSessionBeanLocal;
+import com.entities.Order1;
 import com.entities.Product;
 import com.model.CartShopping;
+import com.sessionbeans.Order1FacadeLocal;
+import com.sessionbeans.OrderDetailsFacadeLocal;
 import com.sessionbeans.ProductFacadeLocal;
 import javax.inject.Named;
 import javax.enterprise.context.SessionScoped;
@@ -20,6 +23,12 @@ import javax.ejb.EJB;
 @Named(value = "cartProductMB")
 @SessionScoped
 public class CartProductMB implements Serializable {
+
+    @EJB
+    private OrderDetailsFacadeLocal orderDetailsFacade;
+
+    @EJB
+    private Order1FacadeLocal order1Facade;
 
     @EJB
     private ProductFacadeLocal productFacade;
@@ -59,6 +68,7 @@ public class CartProductMB implements Serializable {
         }
         return listCart;
     }
+
 
     public void updateCart(int id, boolean flag) {
         cartSessionBean.updateCart(id, flag);

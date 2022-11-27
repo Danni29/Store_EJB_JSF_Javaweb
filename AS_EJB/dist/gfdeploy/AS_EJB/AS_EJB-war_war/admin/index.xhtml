@@ -1,0 +1,213 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style type="text/css">
+        .title{
+            color:   #fff;
+        }
+    </style>
+    <h:head>
+        <title>Admin</title>
+        <f:event type="preRenderView" listener="#{loginMB.checkLogin}"/>
+    </h:head>
+    <h:body style="
+            background-image: url('https://pic2.zhimg.com/v2-23ddb0693c87d23b5cdcb8ad79ff5bae_r.jpg?source=172ae18b');
+            ">
+        <div class="container">
+
+            <ul class="nav nav-tabs">
+                <li class="active"><a data-toggle="tab" href="#home" style="color: #d15f5f;">Product Management</a></li>
+                <li><a data-toggle="tab" href="#menu1" style="color: #d15f5f;">Customer Management</a></li>
+                <li><a data-toggle="tab" href="#menu2" style="color: #d15f5f;">Order Management</a></li>
+            </ul>
+
+            <div class="tab-content">
+                <div id="home" class="tab-pane fade in active">
+                    <h3 class="title">Notification: <h:outputText style="color: red" value="#{productMB.message}" rendered="#{!empty productMB.message}"/>
+                        <h:outputText style="color: red" value="#{typeMB.message}" rendered="#{!empty typeMB.message}"/>
+                    </h3>
+                    <!--start product manager-->
+                    <hr></hr>
+                    <center>
+                        <div class="col-sm-4">   
+                            <h4 class="title">Add New Product</h4>
+                            <h:form id="createProductForm" class="form-horizontal" enctype="multipart/form-data">
+
+                                <h:outputLabel for="productname" class="control-label title">Product Name:</h:outputLabel>
+                                <div>
+                                    <h:message style="color: red" for="name-id"/>
+                                </div>
+                                <h:inputText maxlength="50" id="name-id" value="#{productMB.name}" class="form-control" validatorMessage="Product name is required">
+                                    <f:validateRequired />
+                                </h:inputText>
+                                <h:outputLabel for="producttype" class="control-label title">Product Type:</h:outputLabel>
+                                <h:selectOneMenu value="#{productMB.type}">
+                                    <f:selectItems  value="#{typeMB.showType()}" var="item" itemValue="#{item.typeID}" itemLabel="#{item.typename}"/>
+                                </h:selectOneMenu>
+                                <h:outputText value="      "/><br></br>
+                                <h:outputLabel for="description" class="control-label title" >Description:</h:outputLabel>
+                                <div>
+                                    <h:message style="color: red" for="description-id"/>
+                                </div>
+                                <h:inputTextarea id="description-id" value="#{productMB.info}" cols="50" rows="5" class="form-control" validatorMessage="Description is required">
+                                    <f:validateRequired/>
+                                </h:inputTextarea>
+                                <h:outputLabel for="price" class="control-label  title">Price:</h:outputLabel>
+                                <div>
+                                    <h:message style="color: red" for="price-id"/>
+                                </div>
+                                <h:inputText maxlength="10" id="price-id" value="#{productMB.price}" class="form-control"  validatorMessage="Price is required" requiredMessage="Only number">
+                                    <f:validateRequired/>
+                                </h:inputText>
+                                <h:outputLabel for="amount" class="control-label  title">Amount:</h:outputLabel>
+                                <div>
+                                    <h:message style="color: red" for="price-id"/>
+                                </div>
+                                <h:inputText maxlength="10" id="amount" value="#{productMB.amount}" class="form-control"  validatorMessage="Price is required" requiredMessage="Only number">
+                                    <f:validateRequired/>
+                                </h:inputText>
+
+                                <h:outputLabel for="image" class="control-label  title">Image:</h:outputLabel>
+                                <div>
+                                    <h:message style="color: red" for="image-id"/>
+                                </div>
+                                <h:inputFile  id="image-id" value="#{productMB.pic}" class="form-control" requiredMessage="Image is required">
+                                    <f:validateRequired/>
+                                </h:inputFile>
+                                <br></br>
+                                <h:commandButton value="Save" action="#{productMB.saveProduct()}" class="btn btn-success btnWidth" />
+                                <h:outputText value="      "/>
+
+                            </h:form> 
+                        </div>
+
+                        <h:form class="form-group">
+                            <div class="col-md-4">     
+                                <h4 class="title">Add Product type</h4>
+                                <h:outputLabel for="typename" class="title">Type name: </h:outputLabel>
+                                <h:inputText id="typename" value="#{typeMB.typename}" class="form-control"></h:inputText>
+                                <h:commandButton value="Add" action="#{typeMB.create()}" class="btn btn-success"></h:commandButton>
+                            </div>
+                        </h:form>
+                        <div class="col-md-4">
+                            <h:form id="ProductType">
+                                <h:dataTable id="producttypeTable" value="#{typeMB.showType()}" var="producttype" class="table btn-primary" style="color:  white;">
+                                    <h:column>
+                                        <f:facet name="header">Id</f:facet>
+                                        <h:outputText value="#{producttype.typeID}" />
+                                    </h:column>
+                                    <h:column>
+                                        <f:facet name="header">Product Name</f:facet>
+                                        <h:outputText value="#{producttype.typename}" />
+                                    </h:column>
+                                    <h:column>
+                                        <f:facet name="header">Delete</f:facet>
+                                        <h:commandButton action="#{typeMB.delete(producttype.typeID)}" value="Delete" class="btn btn-danger" onclick="return confirm('Are you sure?')"/>
+                                    </h:column>
+                                </h:dataTable>
+                            </h:form>
+                        </div>
+
+                    </center>
+                    <br></br>
+                    <!--end product manager-->
+                    <div class="container">
+                        <div class="col-md-4">
+                            <h:form id="fProducts">
+                                <h:dataTable id="productTable" value="#{productMB.showAllProduct()}" var="item2" class="table btn-success">
+                                    <h:column>
+                                        <f:facet name="header" class="title">Id</f:facet>
+                                        <h:outputText class="title" value="#{item2.productID}" />
+                                    </h:column>
+                                    <h:column>
+                                        <f:facet name="header" class="title">Product Name</f:facet>
+                                        <h:outputText value="#{item2.productName}" class="title"/>
+                                    </h:column>
+                                    <h:column>
+                                        <f:facet name="header" class="title">Product Type</f:facet>
+                                        <h:outputText value="#{item2.typeid.typename}" class="title"/>
+                                    </h:column>
+                                    <h:column>
+                                        <f:facet name="header" class="title">Info</f:facet>
+                                        <h:outputText value="#{item2.productInfo}" class="title"/>
+                                    </h:column>
+                                    <h:column>
+                                        <f:facet name="header" class="title">Price</f:facet>
+                                        <h:outputText value="#{item2.price}" class="title"/>
+                                    </h:column>
+                                    <h:column>
+                                        <f:facet name="header" class="title">Amount</f:facet>
+                                        <h:outputText value="#{item2.amount}" class="title" />
+                                    </h:column>
+                                    <h:column>
+                                        <f:facet name="header" class="title">Image</f:facet>
+                                        <img src="../images/${item2.pic}" width="150" height="150" alt="#{item2.pic}"/>
+                                    </h:column>
+                                    <h:column>
+                                        <f:facet name="header">Update</f:facet>
+                                        <h:commandButton action="#{productMB.showEditProduct(item2.productID)}" value="Update" class="btn btn-primary" />
+                                    </h:column>
+                                    <h:column>
+                                        <f:facet name="header">Delete</f:facet>
+                                        <h:commandButton action="#{productMB.deleteProduct(item2.productID)}" value="Delete" class="btn btn-danger" onclick="return confirm('Are you sure?')"/>
+                                    </h:column>
+                                </h:dataTable>
+                            </h:form>
+                        </div>
+                    </div>
+                </div>
+                <div id="menu1" class="tab-pane fade">
+                    <h3 class="title">Notification: <h:outputText style="color: red" value="#{productMB.message}" rendered="#{!empty productMB.message}"/>
+                        <h:outputText style="color: red" value="#{typeMB.message}" rendered="#{!empty typeMB.message}"/>
+                    </h3>
+                    <hr></hr>
+                        <center>
+                    <f:view>
+                        <h:form>
+                            <h:dataTable value="#{customerMB.showAllCustomer()}" var="item3" class="table btn-primary title">
+                                <h:column>
+                                    <f:facet name="header" >Full name</f:facet>
+                                    <h:outputText value="#{item3.username}"/>
+                                </h:column>
+                                <h:column>
+                                    <f:facet name="header" >PassWord</f:facet>
+                                    <h:outputText value="#{item3.password}"/>
+                                </h:column>
+                                <h:column>
+                                    <f:facet name="header" >First Name</f:facet>
+                                    <h:outputText value="#{item3.firstname}"/>
+                                </h:column>
+                                <h:column>
+                                    <f:facet name="header" >Phone</f:facet>
+                                    <h:outputText value="#{item3.phone}"/>
+                                </h:column>
+                                <h:column>
+                                    <f:facet name="header" >Address</f:facet>
+                                    <h:outputText value="#{item3.address}"/>
+                                </h:column>
+                                <h:column>
+                                    <h:commandButton value="Delete" class="btn btn-danger"></h:commandButton>
+                                </h:column>
+                            </h:dataTable>
+                        </h:form>
+                    </f:view>
+                    </center>
+                </div>
+                
+                <div id="menu2" class="tab-pane fade">
+                    <h3 class="title">Order Management</h3>
+
+                </div>
+              
+            </div>
+        </div>
+
+    </h:body>
+</html>
+

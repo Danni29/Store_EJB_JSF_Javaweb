@@ -30,5 +30,17 @@ public class redirect {
     public String goAbout(){
     return "about";
     }
+    public String goContact(){
+    return "contact";
+    }
+     public String goOrder(){
+    return "order";
+    }
+     public String goUser(){
+    return "user";
+    }
+     public String goLogin(){
+    return "login";
+    }
     
 }

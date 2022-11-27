@@ -29,6 +29,7 @@ public interface ProductFacadeLocal {
     List<Product> findRange(int[] range);
 
     int count();
-
+    
+ public List<Product> searchByTitle(String title);
     
 }

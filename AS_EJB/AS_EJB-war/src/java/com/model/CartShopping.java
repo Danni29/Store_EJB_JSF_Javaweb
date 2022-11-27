@@ -1,9 +1,15 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package com.model;
 
 /**
  *
- * @author Le Thi Minh Loan
+ * @author Ngocd
  */
+
 public class CartShopping {
     private int proID;
     private String proName;
@@ -75,6 +81,4 @@ public class CartShopping {
         this.totalprice = totalprice;
     }
 
-    
-    
 }

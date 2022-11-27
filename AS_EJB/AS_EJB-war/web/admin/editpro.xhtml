@@ -1,0 +1,117 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <h:head>
+        <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1" http-equiv="X-UA-Conpatible" />
+        <link href="../css/bootstrap.min.css" rel="stylesheet"/>
+        <title>Create Products</title>
+        <style type="text/css">
+            .btnWidth {
+                width: 80px;
+            }     
+        </style>
+        <f:event type="preRenderView" listener="#{loginMB.checkLoginAdmin}"/>
+    </h:head>
+    <h:body>
+        <center>
+            <h:form class="form-horizontal" enctype="multipart/form-data">
+                <div class="form-group">
+                    <div class="col-sm-4"></div>
+                    <div class="col-sm-4">
+                        <h2>Edit Product</h2>
+                    </div>
+                </div>
+                <div>
+                    <h:outputText style="color: red" value="#{productMB.message}" rendered="#{!empty productMB.message}"/>
+                </div>
+                <h:outputText style="color: red" value="#{productMB.message}" rendered="#{!empty productMB.message}"/>
+                <hr/>
+                <div class="form-group">
+                    <h:outputLabel for="productid" class="control-label col-sm-4">Product ID:</h:outputLabel>
+                    <div class="col-sm-4">
+                        <h:outputText id="id-id" value="#{productMB.product.productID}" class="form-control"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <h:outputLabel for="productname" class="control-label col-sm-4">Product Name:</h:outputLabel>
+                    <div>
+                        <h:message style="color: red" for="name-id"/>
+                    </div>
+                    <div class="col-sm-4">
+                        <h:inputText maxlength="50" id="name-id" value="#{productMB.product.productName}" class="form-control" validatorMessage="Product name is required">
+                            <f:validateRequired />
+                        </h:inputText>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <h:outputLabel for="producttype" class="control-label col-sm-4">Product Type:</h:outputLabel>
+                    <div class="col-sm-4">
+                        <h:selectOneMenu value="#{productMB.idtype}">
+                            <f:selectItems  value="#{typeMB.showType()}" var="item" itemValue="#{item.typeID}" itemLabel="#{item.typeID} - #{item.typename}"/>
+                        </h:selectOneMenu>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <h:outputLabel for="description" class="control-label col-sm-4">Info: </h:outputLabel>
+                    <div>
+                        <h:message style="color: red" for="description-id"/>
+                    </div>
+                    <div class="col-sm-4">
+                        <h:inputTextarea id="description-id" value="#{productMB.product.productInfo}" cols="50" rows="5" class="form-control" validatorMessage="Description is required">
+                            <f:validateRequired/>
+                        </h:inputTextarea>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <h:outputLabel for="price" class="control-label col-sm-4">Price:</h:outputLabel>
+                    <div>
+                        <h:message style="color: red" for="price-id"/>
+                    </div>
+                    <div class="col-sm-4">
+                        <h:inputText maxlength="10" id="price-id" value="#{productMB.product.price}" class="form-control" requiredMessage="Price is required" validatorMessage="Price is number">
+                            <f:validateRequired/><f:validateRegex pattern="^[0-9]+$"/>
+                        </h:inputText>
+                    </div>
+                </div>
+                 <div class="form-group">
+                    <h:outputLabel for="price" class="control-label col-sm-4">Amount: </h:outputLabel>
+                    <div>
+                        <h:message style="color: red" for="amount"/>
+                    </div>
+                    <div class="col-sm-4">
+                        <h:inputText maxlength="10" id="amount" value="#{productMB.product.amount}" class="form-control" requiredMessage="Amount is required" validatorMessage="Amount is number">
+                            <f:validateRequired/><f:validateRegex pattern="^[0-9]+$"/>
+                        </h:inputText>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <h:outputLabel for="image" class="control-label col-sm-4">Image</h:outputLabel>
+                    <div class="col-sm-4">
+                        <img src="../images/#{productMB.product.pic}" width="300" height="200" alt="#{productMB.product.pic}"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <h:outputLabel for="image" class="control-label col-sm-4">New Image:</h:outputLabel>
+                    <div>
+                        <h:message style="color: red" for="image-id"/>
+                    </div>
+                    <div class="col-sm-4">
+                        <h:inputFile  id="image-id" value="#{productMB.pic}" class="form-control" requiredMessage="Image is required">
+                            <f:validateRequired/>
+                        </h:inputFile>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <h:commandButton value="Save" action="#{productMB.deleteProduct(productMB.product.productID)}" class="btn btn-success" />
+                    <h:outputText value="      "/>
+                    <h:link outcome="index" value="Admin Page" class="btn btn-primary" />
+                </div>
+            </h:form>
+        </center>
+    </h:body>
+</html>

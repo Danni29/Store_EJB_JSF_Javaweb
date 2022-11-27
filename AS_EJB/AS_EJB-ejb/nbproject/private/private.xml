@@ -3,10 +3,9 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/Users/danni/Desktop/AS_EJB/AS_EJB-ejb/src/java/com/cart/CartSessionBean.java</file>
-            <file>file:/Users/danni/Desktop/AS_EJB/AS_EJB-ejb/src/java/com/sessionbeans/OrderDetailsFacadeLocal.java</file>
-            <file>file:/Users/danni/Desktop/AS_EJB/AS_EJB-ejb/src/java/com/cart/CartSessionBeanLocal.java</file>
-            <file>file:/Users/danni/Desktop/AS_EJB/AS_EJB-ejb/src/java/com/sessionbeans/OrderDetailsFacade.java</file>
+            <file>file:/C:/Users/Ngocd/OneDrive/Documents/NetBeansProjects/Store_EJB_JSF_Javaweb/AS_EJB/AS_EJB-ejb/src/java/com/sessionbeans/ProductFacade.java</file>
+            <file>file:/C:/Users/Ngocd/OneDrive/Documents/NetBeansProjects/Store_EJB_JSF_Javaweb/AS_EJB/AS_EJB-ejb/src/java/com/sessionbeans/ProductFacadeLocal.java</file>
+            <file>file:/C:/Users/Ngocd/OneDrive/Documents/NetBeansProjects/Store_EJB_JSF_Javaweb/AS_EJB/AS_EJB-ejb/src/java/com/sessionbeans/CustomersFacade.java</file>
         </group>
     </open-files>
 </project-private>
