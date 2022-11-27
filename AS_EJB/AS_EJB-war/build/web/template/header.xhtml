@@ -1,0 +1,84 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="./css/css.css"/>
+
+
+
+    <h:head>
+        <title>Header</title> 
+
+    </h:head>
+
+    <f:event type="preRenderView" listener="#{loginMB.checkLogin}"/>
+
+    <h:body>
+        <ui:composition>           
+            <!--header-->
+            <div class="container-fluid color">
+                <div class="col-md-6">
+                    <nav class="navbar">
+                        <div class="navbar-header">
+                            <img src="https://www.pngitem.com/pimgs/m/363-3632731_computer-hardware-store-logo-hd-png-download.png" width="200" height="70"/>
+                        </div>
+                        <ul class="nav navbar-nav">
+                            <li class="active "><a href="index.xhtml"><i class="glyphicon glyphicon-home"></i> Home</a></li>
+                            <li><a href="#"><i class="glyphicon glyphicon-list-alt"></i> All Product</a></li>
+                            <li><a href="#"><i class="glyphicon glyphicon-inbox"></i> Contact</a></li>
+                            <li><a href="#"><i class="glyphicon glyphicon-bookmark"></i> About</a></li>
+                            <li><a href="#"><i class="glyphicon glyphicon-wrench"></i> Welcome <h:outputText value="#{loginMB.username}"/> !</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="col-md-6">
+                    <nav class="navbar">       
+                        <h:form>
+                            <ul class="nav navbar-nav">
+                                <li class="active"><a href="login.xhtml"> <i class="glyphicon glyphicon-user"></i> Register/Login</a></li>
+                                <li><a href="cart.xhtml"> <i class="glyphicon glyphicon-shopping-cart"></i>My Cart</a></li>
+                                <li><a href="#"> <i class="glyphicon glyphicon-list-alt"></i> My Order Detail</a></li>
+                                <li><i class="glyphicon glyphicon-log-out"></i><h:commandButton value="Logout" action="#{loginMB.Logout()}" class="btn btn-primary"/></li>
+                            </ul>    
+                        </h:form>
+                        <h:form class="form-inline">
+                            <center>
+                                <h:inputText class="form-control mr-sm-2" value="Grapic Card"></h:inputText>
+                                <h:commandButton class="btn btn-success" value="Search"></h:commandButton>
+                            </center>
+                        </h:form>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="navbar navbar-inverse" style="background-color: darkslategrey;">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <a class="navbar-brand" href="#">SALES</a>
+                    </div>
+                    <ul class="nav navbar-nav">
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Graphic Card
+                                <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">NVIDIA</a></li>
+                                <li><a href="#">AMD</a></li>
+                                <li><a href="#">INTEL</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">CPU</a></li>
+                        <li><a href="#">MAIN</a></li>
+                    </ul>
+                </div>
+            </nav>
+            <!--end header-->
+        </ui:composition>
+    </h:body>
+</html>   
+
