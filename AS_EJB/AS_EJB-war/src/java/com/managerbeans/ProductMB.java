@@ -53,8 +53,11 @@ public class ProductMB {
      * Creates a new instance of ProductMB
      */
     InputStream inputStream = null;
-    OutputStream outputStream = null;
-    String path = "/Users/danni/Desktop/AS_EJB/AS_EJB-war/web/";
+    OutputStream outputStream = null; 
+    //macos
+    //  String path = "/Users/danni/Desktop/AS_EJB/AS_EJB-war/web/";     
+    //windows
+    String path = "C:\\Users\\Ngocd\\OneDrive\\Documents\\NetBeansProjects\\Store_EJB_JSF_Javaweb\\AS_EJB\\AS_EJB-war\\web";     
     //Real Path
     FacesContext context = FacesContext.getCurrentInstance();
     ServletContext servletContext = (ServletContext) context.getExternalContext().getContext();

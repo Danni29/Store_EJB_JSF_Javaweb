@@ -22,6 +22,7 @@
     <h:body>
         <ui:composition>           
             <!--header-->
+            <br></br>
             <div class="container-fluid color">
                 <div class="col-md-6">
                     <nav class="navbar">
@@ -29,7 +30,7 @@
                             <img src="https://www.pngitem.com/pimgs/m/363-3632731_computer-hardware-store-logo-hd-png-download.png" width="200" height="70"/>
                         </div>
                         <ul class="nav navbar-nav">
-                            <li class="active "><a href="index.xhtml"><i class="glyphicon glyphicon-home"></i> Home</a></li>
+                            <li class="active "><i class="glyphicon glyphicon-home"></i><h:commandButton action="#{redirec.goHome()}" value="Home"></h:commandButton> </li>
                             <li><a href="#"><i class="glyphicon glyphicon-list-alt"></i> All Product</a></li>
                             <li><a href="#"><i class="glyphicon glyphicon-inbox"></i> Contact</a></li>
                             <li><a href="#"><i class="glyphicon glyphicon-bookmark"></i> About</a></li>
