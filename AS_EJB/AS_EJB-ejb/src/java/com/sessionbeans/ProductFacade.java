@@ -36,7 +36,7 @@ public class ProductFacade extends AbstractFacade<Product> implements ProductFac
    @Override
     public List<Product> searchByTitle(String title) {
          try {
-            TypedQuery<Product> query = em.createQuery("select p from Product p where e.ProductName LIKE %:title%", Product.class);
+            TypedQuery<Product> query = em.createQuery("select p from Product p where p.productName LIKE %:title%", Product.class);
             query.setParameter("title", title);
             return query.getResultList();
         } catch (Exception e) {

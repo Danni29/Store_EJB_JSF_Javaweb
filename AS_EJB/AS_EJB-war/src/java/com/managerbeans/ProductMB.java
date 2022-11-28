@@ -50,7 +50,7 @@ public class ProductMB {
     private int idtype;
     private String searchString;
     String UPLOAD_DIRECTORY = "images";
-     List<Product> proSearch = new ArrayList<>();
+     private List<Product> proSearch = new ArrayList<>();
 
     /**
      * Creates a new instance of ProductMB
@@ -120,6 +120,7 @@ public class ProductMB {
         return "editpro";
     }
     public String saveEditProduct(int id) throws IOException {
+        
             File fileSaveDir = new File(uploadFilePath);
             if (!fileSaveDir.exists()) {
                 fileSaveDir.mkdirs();
@@ -150,15 +151,16 @@ public class ProductMB {
             } else {
                 setMessage("Error, select atleast one file!");
             }
-            Product pro;
-            pro = productFacade.find(id);
-            pro.setProductName(product.getProductName());
-            pro.setProductInfo(product.getProductInfo());
-            pro.setPrice(product.getPrice());
-            pro.setAmount(product.getAmount());
-            pro.setTypeid(productTypeFacade.find(idtype));
-            pro.setPic(getFileNameFromPart(pic));
-            productFacade.edit(pro);
+            System.out.println(product.getProductID());
+            Product prod;
+            prod = productFacade.find(this.product.getProductID());
+            prod.setProductName(this.product.getProductName());
+            prod.setProductInfo(this.product.getProductInfo());
+            prod.setPrice(this.product.getPrice());
+            prod.setAmount(this.product.getAmount());
+            prod.setTypeid(productTypeFacade.find(type));
+            prod.setPic(getFileNameFromPart(pic));
+            productFacade.edit(prod);
             setMessage("Producs is edited.");
             return "index";
     }
@@ -169,9 +171,10 @@ public class ProductMB {
         setMessage("Product ID: " + id + " is deleted.");
         return "index";
     }
- public List<Product> searchByName(String title){
- this.proSearch = productFacade.searchByTitle(title);
-    return this.proSearch;
+ public String searchByName(){
+ this.proSearch = productFacade.searchByTitle(searchString);
+     System.out.println(proSearch);
+  return "search";
  }
  
 public String viewDetail(int id){
@@ -292,6 +295,14 @@ public String viewDetail(int id){
 
     public void setSearchString(String searchString) {
         this.searchString = searchString;
+    }
+
+    public List<Product> getProSearch() {
+        return proSearch;
+    }
+
+    public void setProSearch(List<Product> proSearch) {
+        this.proSearch = proSearch;
     }
     
 }

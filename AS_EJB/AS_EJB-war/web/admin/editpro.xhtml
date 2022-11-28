@@ -6,10 +6,11 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"/>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="./css/css.css"/>
     <h:head>
         <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1" http-equiv="X-UA-Conpatible" />
         <link href="../css/bootstrap.min.css" rel="stylesheet"/>
-        <title>Create Products</title>
+        <title>Edit Products</title>
         <style type="text/css">
             .btnWidth {
                 width: 80px;
@@ -17,13 +18,15 @@
         </style>
         <f:event type="preRenderView" listener="#{loginMB.checkLoginAdmin}"/>
     </h:head>
-    <h:body>
+       <h:body style="
+            background-image: url('http://www.treeewellness.com.br/web/assets/admin/img/blur-background04.jpg');
+            " >
         <center>
-            <h:form class="form-horizontal" enctype="multipart/form-data">
+            <h:form class="form-horizontal title" enctype="multipart/form-data">
                 <div class="form-group">
                     <div class="col-sm-4"></div>
                     <div class="col-sm-4">
-                        <h2>Edit Product</h2>
+                        <h2>Edit Product</h2><h:link outcome="index" value="Admin Page" class="btn btn-primary" />
                     </div>
                 </div>
                 <div>
@@ -34,7 +37,9 @@
                 <div class="form-group">
                     <h:outputLabel for="productid" class="control-label col-sm-4">Product ID:</h:outputLabel>
                     <div class="col-sm-4">
-                        <h:outputText id="id-id" value="#{productMB.product.productID}" class="form-control"/>
+                        <h:inputText id="id-id" value="#{productMB.product.productID}" class="btn btn-danger" validatorMessage="Product ID is required">
+                                <f:validateRequired/>
+                        </h:inputText>
                     </div>
                 </div>
                 <div class="form-group">
@@ -49,9 +54,9 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <h:outputLabel for="producttype" class="control-label col-sm-4">Product Type:</h:outputLabel>
+                    <h:outputLabel for="type" class="control-label col-sm-4">Product Type:</h:outputLabel>
                     <div class="col-sm-4">
-                        <h:selectOneMenu value="#{productMB.idtype}">
+                        <h:selectOneMenu value="#{productMB.type}">
                             <f:selectItems  value="#{typeMB.showType()}" var="item" itemValue="#{item.typeID}" itemLabel="#{item.typeID} - #{item.typename}"/>
                         </h:selectOneMenu>
                     </div>
@@ -74,7 +79,7 @@
                     </div>
                     <div class="col-sm-4">
                         <h:inputText maxlength="10" id="price-id" value="#{productMB.product.price}" class="form-control" requiredMessage="Price is required" validatorMessage="Price is number">
-                            <f:validateRequired/><f:validateRegex pattern="^[0-9]+$"/>
+                            <!--<f:validateRequired/><f:validateRegex pattern="^[0-9]+$"/>-->
                         </h:inputText>
                     </div>
                 </div>
@@ -85,7 +90,7 @@
                     </div>
                     <div class="col-sm-4">
                         <h:inputText maxlength="10" id="amount" value="#{productMB.product.amount}" class="form-control" requiredMessage="Amount is required" validatorMessage="Amount is number">
-                            <f:validateRequired/><f:validateRegex pattern="^[0-9]+$"/>
+                            <!--<f:validateRequired/><f:validateRegex pattern="^[0-9]+$"/>-->
                         </h:inputText>
                     </div>
                 </div>
@@ -107,9 +112,8 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <h:commandButton value="Save" action="#{productMB.deleteProduct(productMB.product.productID)}" class="btn btn-success" />
-                    <h:outputText value="      "/>
-                    <h:link outcome="index" value="Admin Page" class="btn btn-primary" />
+                    <h:commandButton value="Save" action="#{productMB.saveEditProduct(productMB.product.productID)}" class="btn btn-success" />
+         
                 </div>
             </h:form>
         </center>

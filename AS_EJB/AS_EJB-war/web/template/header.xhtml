@@ -50,10 +50,9 @@
                         </h:form>
                         <h:form class="form-inline">
                             <center>
-                                <h:form>
-                                <h:inputText class="form-control mr-sm-2" value="Grapic Card"></h:inputText>
-                                <h:commandButton class="btn btn-success"  value="Search"></h:commandButton>
-                               
+                                <h:form id="search">
+                                    <h:inputText class="form-control mr-sm-2"  value="#{productMB.searchString}" />
+                                    <h:commandButton class="btn btn-success" action="#{productMB.searchByName()}" value="Search" />
                                 </h:form>
                             </center>
                         </h:form>
