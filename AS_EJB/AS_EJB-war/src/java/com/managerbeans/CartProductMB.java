@@ -18,18 +18,13 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import javax.ejb.EJB;
+import javax.servlet.http.HttpServletRequest;
 
 
 @Named(value = "cartProductMB")
 @SessionScoped
 public class CartProductMB implements Serializable {
-
-    @EJB
-    private OrderDetailsFacadeLocal orderDetailsFacade;
-
-    @EJB
-    private Order1FacadeLocal order1Facade;
-
+HttpServletRequest request;
     @EJB
     private ProductFacadeLocal productFacade;
 
@@ -63,7 +58,7 @@ public class CartProductMB implements Serializable {
             CartShopping cShop = new CartShopping(id, pro.getProductName(), quality, price, quality * price, pro.getPic());
             listCart.add(cShop);
             numCart.add(quality);
-            totalMoneyCart += quality * price;
+            totalMoneyCart +=  price * quality;
             totalProCart += quality;
         }
         return listCart;

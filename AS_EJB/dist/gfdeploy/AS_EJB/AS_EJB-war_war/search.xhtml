@@ -7,18 +7,16 @@
             <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"/>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="./css/css.css"/>
     <h:head>
         <title>Search Page</title>
     </h:head>
     <h:body>
        <ui:insert name="header">
             <ui:include src="./template/header.xhtml" />
-        </ui:insert>
-        
+        </ui:insert>  
         <div class="container">
-            
-            <h:form>
-             <div class="col-md-12">
+                 <h:form>
                  <c:forEach items="#{productMB.proSearch}" var="item">
                         <div class="col-sm-3">
                             <br></br>
@@ -32,18 +30,14 @@
                             <div class="hovereffect">
                                 <img class="img-responsive" src="../images/#{item.pic}" />
                                 <div class="overlay">
-                                    <h2> <h:commandButton type="submit" value="Add Cart" class="btn btn-primary btn-sm" action="#{cartProductMB.addCartProduct(item.productID)}" /> </h2>
-                                   <h2> <h:commandButton type="submit" value="View Detail" class="btn btn-primary btn-sm" action="#{productMB.viewDetail(item.productID)}" /> </h2>
+                                    <h2> <h:commandButton type="submit" value="Add Cart" class="btn btn-primary btn-sm" action="#{cartProductMB.addCartProduct(item.productID)}"/> </h2>
+                                    <h2> <h:commandButton type="submit" value="View Detail" class="btn btn-success btn-sm" action="#{productMB.viewDetail(item.productID)}"/> </h2>
                                 </div>
                             </div> 
                         </div>  
                     </c:forEach>
-                </div>
-            </h:form>
+                 </h:form>     
         </div>
-        
-        
-        
              <ui:insert name="flooter">
             <ui:include src="./template/flooter.xhtml" />
         </ui:insert>

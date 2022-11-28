@@ -41,6 +41,13 @@ public class redirect {
     }
      public String goLogin(){
     return "login";
+    } 
+     public String goSearch(){
+    return "search";
     }
+     public String gohHome(){
+     return "../index";
+     }
+     
     
 }

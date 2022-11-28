@@ -21,23 +21,25 @@
 
     <h:body>
         <ui:composition>           
-            <h:form>
+
             <!--header-->
-        
-            <div class="container-fluid color">
-                <div class="col-md-6">
-                    <nav class="navbar">
-                        <div class="navbar-header">
-                            <img src="https://www.pngitem.com/pimgs/m/363-3632731_computer-hardware-store-logo-hd-png-download.png" width="200" height="70"/>
-                        </div>
-                        <ul class="nav navbar-nav">
-                            <li class="active "><i class="glyphicon glyphicon-home"></i><h:commandButton action="#{redirec.goHome   ()}" value="Home" class="btn btn-primary"></h:commandButton></li>
-                            <li><i class="glyphicon glyphicon-inbox"></i><h:commandButton action="#{redirec.goContact()}" value="Contact" class="btn btn-primary"/></li>
-                            <li><i class="glyphicon glyphicon-bookmark"></i><h:commandButton action="#{redirec.goAbout()}" value="About" class="btn btn-primary"/></li>
-                            <li>Welcome <h:outputText value="#{loginMB.username}"/> ! <h:commandButton action="#{redirec.goUser()}" value="Edit your Info" class="btn btn-warning"/></li>
-                        </ul>
-                    </nav>
-                </div>
+
+            <div class="container-fluid color"> 
+                <h:form>
+                    <div class="col-md-6">
+                        <nav class="navbar">
+                            <div class="navbar-header">
+                                <img src="https://www.pngitem.com/pimgs/m/363-3632731_computer-hardware-store-logo-hd-png-download.png" width="200" height="70"/>
+                            </div>
+                            <ul class="nav navbar-nav">
+                                <li class="active "><i class="glyphicon glyphicon-home"></i><h:commandButton action="#{redirec.goHome   ()}" value="Home" class="btn btn-primary"></h:commandButton></li>
+                                <li><i class="glyphicon glyphicon-inbox"></i><h:commandButton action="#{redirec.goContact()}" value="Contact" class="btn btn-primary"/></li>
+                                <li><i class="glyphicon glyphicon-bookmark"></i><h:commandButton action="#{redirec.goAbout()}" value="About" class="btn btn-primary"/></li>
+                                <li>Welcome <h:outputText value="#{loginMB.username}"/> ! <h:commandButton action="#{redirec.goUser()}" value="Edit your Info" class="btn btn-warning"/></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </h:form>
                 <div class="col-md-6">
                     <nav class="navbar">       
                         <h:form>
@@ -50,10 +52,8 @@
                         </h:form>
                         <h:form class="form-inline">
                             <center>
-                                <h:form id="search">
-                                    <h:inputText class="form-control mr-sm-2"  value="#{productMB.searchString}" />
-                                    <h:commandButton class="btn btn-success" action="#{productMB.searchByName()}" value="Search" />
-                                </h:form>
+                                <h:inputText class="form-control mr-sm-2"  value="#{productMB.searchString}" />
+                                <h:commandButton class="btn btn-success" action="#{productMB.searchByName()}" value="Search" />
                             </center>
                         </h:form>
                     </nav>
@@ -81,7 +81,7 @@
                 </div>
             </nav>
             <!--end header-->
-            </h:form>
+
         </ui:composition>
     </h:body>
 </html>   

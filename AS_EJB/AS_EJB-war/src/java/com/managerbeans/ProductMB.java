@@ -172,8 +172,7 @@ public class ProductMB {
         return "index";
     }
  public String searchByName(){
- this.proSearch = productFacade.searchByTitle(searchString);
-     System.out.println(proSearch);
+ this.proSearch = productFacade.searchByTitle(this.searchString);
   return "search";
  }
  
