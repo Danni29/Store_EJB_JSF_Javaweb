@@ -29,5 +29,5 @@ public interface ProductTypeFacadeLocal {
     List<ProductType> findRange(int[] range);
 
     int count();
-    
+      
 }

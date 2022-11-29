@@ -72,10 +72,13 @@
             <c:if test="#{cartProductMB.countCart()==0}">
                 <div class="no-records">Your Cart is Empty</div>
             </c:if>
+            
             <div class="no-records">
                 <p class="card-text">
+                    <h:form>
                     <h:link outcome="index" value="Continute Shopping" class="btn btn-primary"/>
-                    <h:commandButton value="Check Out"  class="btn btn-success"/>
+                    <h:commandButton value="Check Out" action="#{checkoutMB.saveCart(loginMB.username)}"  class="btn btn-success"/>
+                    </h:form>
                 </p>
             </div>
         </div>

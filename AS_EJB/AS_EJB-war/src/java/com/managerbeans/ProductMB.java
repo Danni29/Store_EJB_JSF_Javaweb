@@ -6,7 +6,6 @@ package com.managerbeans;
  * and open the template in the editor.
  */
 
-
 import com.entities.Product;
 import com.sessionbeans.ProductFacadeLocal;
 import com.sessionbeans.ProductTypeFacadeLocal;
@@ -58,9 +57,9 @@ public class ProductMB {
     InputStream inputStream = null;
     OutputStream outputStream = null; 
     //macos
-    //  String path = "/Users/danni/Desktop/AS_EJB/AS_EJB-war/web/";     
+    String path = "/Users/danni/Library/CloudStorage/OneDrive-Personal/Documents/NetBeansProjects/Store_EJB_JSF_Javaweb/AS_EJB/AS_EJB-war/web/";     
     //windows
-    String path = "C:\\Users\\Ngocd\\OneDrive\\Documents\\NetBeansProjects\\Store_EJB_JSF_Javaweb\\AS_EJB\\AS_EJB-war\\web";     
+    //String path = "C:\\Users\\Ngocd\\OneDrive\\Documents\\NetBeansProjects\\Store_EJB_JSF_Javaweb\\AS_EJB\\AS_EJB-war\\web";     
     //Real Path
     FacesContext context = FacesContext.getCurrentInstance();
     ServletContext servletContext = (ServletContext) context.getExternalContext().getContext();
@@ -173,6 +172,10 @@ public class ProductMB {
     }
  public String searchByName(){
  this.proSearch = productFacade.searchByTitle(this.searchString);
+  return "search";
+ }
+  public String searchByType(int id){
+  this.proSearch=productFacade.searchByType(id);
   return "search";
  }
  

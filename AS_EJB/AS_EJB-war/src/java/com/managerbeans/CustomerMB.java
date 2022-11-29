@@ -27,17 +27,33 @@ public class CustomerMB {
         private String firstname;
         private String address;
         private int phone;
+        private Customers customer = new Customers();
+        private String message ="";
     /**
      * Creates a new instance of CustomerMB
      */
     public List<Customers> showAllCustomer(){
         return customersFacade.findAll();
     }
-    
-    public Customers cusInfo(String username){
-        return customersFacade.find(username);      
+  
+    public String cusInfo(String username){
+        this.customer = customersFacade.find(username); 
+        return "customer";
+                
     }
-    
+    public String saveEdit(){
+        Customers customers;
+        customers = customersFacade.find(this.customer.getUsername());
+        customers.setUsername(this.customer.getUsername());
+        customers.setFirstname(this.customer.getFirstname());
+        customers.setAddress(this.customer.getAddress());
+        customers.setPhone(this.customer.getPhone());
+        customers.setPassword(this.customer.getPassword());
+        customers.setType(false);
+        customersFacade.edit(customers);
+        message = "Update Info Successfuly !";
+        return "customer";
+    }
     public CustomerMB() {
     }
 
@@ -79,6 +95,22 @@ public class CustomerMB {
 
     public void setPhone(int phone) {
         this.phone = phone;
+    }
+
+    public Customers getCustomer() {
+        return customer;
+    }
+
+    public void setCustomer(Customers customer) {
+        this.customer = customer;
+    }
+
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
     }
     
 }

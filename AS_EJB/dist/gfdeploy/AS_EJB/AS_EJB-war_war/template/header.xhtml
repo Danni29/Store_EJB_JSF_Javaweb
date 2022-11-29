@@ -35,7 +35,7 @@
                                 <li class="active "><i class="glyphicon glyphicon-home"></i><h:commandButton action="#{redirec.goHome   ()}" value="Home" class="btn btn-primary"></h:commandButton></li>
                                 <li><i class="glyphicon glyphicon-inbox"></i><h:commandButton action="#{redirec.goContact()}" value="Contact" class="btn btn-primary"/></li>
                                 <li><i class="glyphicon glyphicon-bookmark"></i><h:commandButton action="#{redirec.goAbout()}" value="About" class="btn btn-primary"/></li>
-                                <li>Welcome <h:outputText value="#{loginMB.username}"/> ! <h:commandButton action="#{redirec.goUser()}" value="Edit your Info" class="btn btn-warning"/></li>
+                                <li>Welcome <h:outputText value="#{loginMB.username}"/> ! <h:commandButton action="#{customerMB.cusInfo(loginMB.username)}" value="Edit your Info" class="btn btn-warning"/></li>
                             </ul>
                         </nav>
                     </div>
@@ -62,21 +62,12 @@
 
             <nav class="navbar navbar-inverse" style="background-color: darkslategrey;">
                 <div class="container-fluid">
-                    <div class="navbar-header">
-                        <a class="navbar-brand" href="#">SALES</a>
-                    </div>
                     <ul class="nav navbar-nav">
-                        <li class="dropdown">
-                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Graphic Card
-                                <span class="caret"></span></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="#">NVIDIA</a></li>
-                                <li><a href="#">AMD</a></li>
-                                <li><a href="#">INTEL</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="#">CPU</a></li>
-                        <li><a href="#">MAIN</a></li>
+                        <h:form>
+                            <c:forEach items="#{typeMB.showType()}" var="items" >
+                                <h:commandButton value="#{items.typename}" action="#{productMB.searchByType(items.typeID)}" class="btn btn-primary"/>
+                            </c:forEach>
+                        </h:form>
                     </ul>
                 </div>
             </nav>

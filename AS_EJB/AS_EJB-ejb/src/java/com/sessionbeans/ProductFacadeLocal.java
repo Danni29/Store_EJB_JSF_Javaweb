@@ -31,5 +31,6 @@ public interface ProductFacadeLocal {
     int count();
     
  public List<Product> searchByTitle(String title);
+ public List<Product> searchByType(int id);
     
 }

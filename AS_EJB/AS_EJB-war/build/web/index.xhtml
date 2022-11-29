@@ -24,7 +24,7 @@
         <!--content-->
         <div class="container"> 
             <h:form>
-                <center> <h4>New Product !</h4></center>
+                <center> <h4>New Product !</h4> <h4><h:outputText value="#{checkoutMB.message}" style="color: #47a862;"/></h4></center>
                 <hr></hr>
                 <div class="col-md-12">
                     <c:forEach items="#{productMB.showAllProduct()}" begin="0" end="3" var="item">

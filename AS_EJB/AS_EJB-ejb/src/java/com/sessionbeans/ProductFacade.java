@@ -44,6 +44,17 @@ public class ProductFacade extends AbstractFacade<Product> implements ProductFac
         }
     }
 
+    @Override
+    public List<Product> searchByType(int id) {
+        try {
+            TypedQuery<Product> query = em.createQuery("select p from Product p where p.typeid = :type", Product.class);
+            query.setParameter("type", id);
+            return query.getResultList();
+        } catch (Exception e) {
+            return null;
+        }
+    }
+
 
   
     

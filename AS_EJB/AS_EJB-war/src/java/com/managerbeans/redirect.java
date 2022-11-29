@@ -37,7 +37,7 @@ public class redirect {
     return "order";
     }
      public String goUser(){
-    return "user";
+    return "customer";
     }
      public String goLogin(){
     return "login";

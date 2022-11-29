@@ -3,27 +3,20 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Ngocd/OneDrive/Documents/NetBeansProjects/Store_EJB_JSF_Javaweb/AS_EJB/AS_EJB-war/web/user.xhtml</file>
-            <file>file:/C:/Users/Ngocd/OneDrive/Documents/NetBeansProjects/Store_EJB_JSF_Javaweb/AS_EJB/AS_EJB-war/web/login.xhtml</file>
-            <file>file:/C:/Users/Ngocd/OneDrive/Documents/NetBeansProjects/Store_EJB_JSF_Javaweb/AS_EJB/AS_EJB-war/src/java/com/managerbeans/ProductMB.java</file>
-            <file>file:/C:/Users/Ngocd/OneDrive/Documents/NetBeansProjects/Store_EJB_JSF_Javaweb/AS_EJB/AS_EJB-war/web/template/flooter.xhtml</file>
-            <file>file:/C:/Users/Ngocd/OneDrive/Documents/NetBeansProjects/Store_EJB_JSF_Javaweb/AS_EJB/AS_EJB-war/src/java/com/managerbeans/LoginMB.java</file>
-            <file>file:/C:/Users/Ngocd/OneDrive/Documents/NetBeansProjects/Store_EJB_JSF_Javaweb/AS_EJB/AS_EJB-war/web/index.xhtml</file>
-            <file>file:/C:/Users/Ngocd/OneDrive/Documents/NetBeansProjects/Store_EJB_JSF_Javaweb/AS_EJB/AS_EJB-war/web/WEB-INF/web.xml</file>
-            <file>file:/C:/Users/Ngocd/OneDrive/Documents/NetBeansProjects/Store_EJB_JSF_Javaweb/AS_EJB/AS_EJB-war/src/java/com/model/CartShopping.java</file>
-            <file>file:/C:/Users/Ngocd/OneDrive/Documents/NetBeansProjects/Store_EJB_JSF_Javaweb/AS_EJB/AS_EJB-war/src/java/com/managerbeans/RegisterMB.java</file>
-            <file>file:/C:/Users/Ngocd/OneDrive/Documents/NetBeansProjects/Store_EJB_JSF_Javaweb/AS_EJB/AS_EJB-war/web/productdetail.xhtml</file>
-            <file>file:/C:/Users/Ngocd/OneDrive/Documents/NetBeansProjects/Store_EJB_JSF_Javaweb/AS_EJB/AS_EJB-war/web/admin/editpro.xhtml</file>
-            <file>file:/C:/Users/Ngocd/OneDrive/Documents/NetBeansProjects/Store_EJB_JSF_Javaweb/AS_EJB/AS_EJB-war/web/search.xhtml</file>
-            <file>file:/C:/Users/Ngocd/OneDrive/Documents/NetBeansProjects/Store_EJB_JSF_Javaweb/AS_EJB/AS_EJB-war/src/java/com/managerbeans/CustomerMB.java</file>
-            <file>file:/C:/Users/Ngocd/OneDrive/Documents/NetBeansProjects/Store_EJB_JSF_Javaweb/AS_EJB/AS_EJB-war/web/cart.xhtml</file>
-            <file>file:/C:/Users/Ngocd/OneDrive/Documents/NetBeansProjects/Store_EJB_JSF_Javaweb/AS_EJB/AS_EJB-war/web/about.xhtml</file>
-            <file>file:/C:/Users/Ngocd/OneDrive/Documents/NetBeansProjects/Store_EJB_JSF_Javaweb/AS_EJB/AS_EJB-war/web/css/css.css</file>
-            <file>file:/C:/Users/Ngocd/OneDrive/Documents/NetBeansProjects/Store_EJB_JSF_Javaweb/AS_EJB/AS_EJB-war/src/java/com/managerbeans/redirect.java</file>
-            <file>file:/C:/Users/Ngocd/OneDrive/Documents/NetBeansProjects/Store_EJB_JSF_Javaweb/AS_EJB/AS_EJB-war/web/admin/index.xhtml</file>
-            <file>file:/C:/Users/Ngocd/OneDrive/Documents/NetBeansProjects/Store_EJB_JSF_Javaweb/AS_EJB/AS_EJB-war/src/java/com/managerbeans/CartProductMB.java</file>
-            <file>file:/C:/Users/Ngocd/OneDrive/Documents/NetBeansProjects/Store_EJB_JSF_Javaweb/AS_EJB/AS_EJB-war/web/template/header.xhtml</file>
-            <file>file:/C:/Users/Ngocd/OneDrive/Documents/NetBeansProjects/Store_EJB_JSF_Javaweb/AS_EJB/AS_EJB-war/src/java/com/managerbeans/TypeMB.java</file>
+            <file>file:/Users/danni/Library/CloudStorage/OneDrive-Personal/Documents/NetBeansProjects/Store_EJB_JSF_Javaweb/AS_EJB/AS_EJB-war/src/java/com/managerbeans/ProductMB.java</file>
+            <file>file:/Users/danni/Library/CloudStorage/OneDrive-Personal/Documents/NetBeansProjects/Store_EJB_JSF_Javaweb/AS_EJB/AS_EJB-war/web/customer.xhtml</file>
+            <file>file:/Users/danni/Library/CloudStorage/OneDrive-Personal/Documents/NetBeansProjects/Store_EJB_JSF_Javaweb/AS_EJB/AS_EJB-war/web/about.xhtml</file>
+            <file>file:/Users/danni/Library/CloudStorage/OneDrive-Personal/Documents/NetBeansProjects/Store_EJB_JSF_Javaweb/AS_EJB/AS_EJB-war/src/java/com/managerbeans/redirect.java</file>
+            <file>file:/Users/danni/Library/CloudStorage/OneDrive-Personal/Documents/NetBeansProjects/Store_EJB_JSF_Javaweb/AS_EJB/AS_EJB-war/web/login.xhtml</file>
+            <file>file:/Users/danni/Library/CloudStorage/OneDrive-Personal/Documents/NetBeansProjects/Store_EJB_JSF_Javaweb/AS_EJB/AS_EJB-war/src/java/com/managerbeans/CustomerMB.java</file>
+            <file>file:/Users/danni/Library/CloudStorage/OneDrive-Personal/Documents/NetBeansProjects/Store_EJB_JSF_Javaweb/AS_EJB/AS_EJB-war/web/contact.xhtml</file>
+            <file>file:/Users/danni/Library/CloudStorage/OneDrive-Personal/Documents/NetBeansProjects/Store_EJB_JSF_Javaweb/AS_EJB/AS_EJB-war/web/search.xhtml</file>
+            <file>file:/Users/danni/Library/CloudStorage/OneDrive-Personal/Documents/NetBeansProjects/Store_EJB_JSF_Javaweb/AS_EJB/AS_EJB-war/web/admin/editpro.xhtml</file>
+            <file>file:/Users/danni/Library/CloudStorage/OneDrive-Personal/Documents/NetBeansProjects/Store_EJB_JSF_Javaweb/AS_EJB/AS_EJB-war/web/cart.xhtml</file>
+            <file>file:/Users/danni/Library/CloudStorage/OneDrive-Personal/Documents/NetBeansProjects/Store_EJB_JSF_Javaweb/AS_EJB/AS_EJB-war/src/java/com/managerbeans/LoginMB.java</file>
+            <file>file:/Users/danni/Library/CloudStorage/OneDrive-Personal/Documents/NetBeansProjects/Store_EJB_JSF_Javaweb/AS_EJB/AS_EJB-war/web/index.xhtml</file>
+            <file>file:/Users/danni/Library/CloudStorage/OneDrive-Personal/Documents/NetBeansProjects/Store_EJB_JSF_Javaweb/AS_EJB/AS_EJB-war/web/template/header.xhtml</file>
+            <file>file:/Users/danni/Library/CloudStorage/OneDrive-Personal/Documents/NetBeansProjects/Store_EJB_JSF_Javaweb/AS_EJB/AS_EJB-war/web/admin/index.xhtml</file>
         </group>
     </open-files>
 </project-private>
